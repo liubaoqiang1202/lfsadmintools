@@ -21,6 +21,7 @@ def lfs_start():
 
 def lfs_stop():
     cmd = '/usr/bin/sync'  # 将内存缓冲区数据写入磁盘
+    print '开始同步缓冲区数据到磁盘...'
     commands.getstatusoutput(cmd)
     time.sleep(10)
     cmd = '/usr/linkapp/bin/tomcat_stop.sh'
