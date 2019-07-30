@@ -22,4 +22,5 @@ def after_check():
     return True
 
 
-
+def test():
+    print 'test'
