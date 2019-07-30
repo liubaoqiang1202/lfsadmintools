@@ -79,7 +79,8 @@ def main():
         ('Stop LFS', lfs_stop),
         ('LFS check', SubCmd([
             ('before install check', before_check),
-            ('after install check', after_check)
+            ('after install check', after_check),
+            ('Quit', quitService)
         ])),
         ('Quit', quitService)
     ]

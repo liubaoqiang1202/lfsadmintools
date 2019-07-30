@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import psutil
-# import tqdm
-# import time
+import tqdm
+import time
 
 
 def get_ps_count(service_name):
@@ -19,8 +19,8 @@ def get_ps_count(service_name):
     return ps_count
 
 
-# def service_progress():
-#     for i in tqdm.tqdm(range(0, 6)):
-#         time.sleep(0.1)
+def service_progress():
+    for i in tqdm.tqdm(range(0, 100)):
+        time.sleep(0.1)
 
 

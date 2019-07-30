@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import commands
 import time
-from publicCommands import get_ps_count
+from publicCommands import get_ps_count, service_progress
 
 
 def lfs_start():
@@ -12,6 +12,7 @@ def lfs_start():
         cmd = '/usr/linkapp/bin/tomcat_check.sh'
         print '开始启动LFS应用'
         start_status, start_msg = commands.getstatusoutput(cmd)
+        service_progress()
         if start_status == 0 and get_ps_count('java') != 0:
             print 'start LFS success...'
         else:
@@ -36,6 +37,7 @@ def lfs_restart():
     cmd = '/usr/linkapp/bin/tomcat_restart.sh'
     print '开始重启LFS应用'
     commands.getstatusoutput(cmd)
+    service_progress()
     wget_status, wget_msg = commands.getstatusoutput(cmd='wget http://127.0.0.1:6800')
 
     if wget_status != 0 and get_ps_count('java') != 0:
