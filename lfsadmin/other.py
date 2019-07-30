@@ -23,4 +23,3 @@ def after_check():
 
 
 
-test shangchuan
