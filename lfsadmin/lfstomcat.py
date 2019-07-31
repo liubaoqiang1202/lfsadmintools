@@ -21,20 +21,23 @@ def lfs_start():
 
 
 def lfs_stop():
-    cmd = '/usr/bin/sync'  # 将内存缓冲区数据写入磁盘
-    print '开始同步缓冲区数据到磁盘...'
-    commands.getstatusoutput(cmd)
-    service_progress()
-#    time.sleep(10)
-    cmd = '/usr/linkapp/bin/tomcat_stop.sh'
-    print '开始停止LFS应用'
-    commands.getstatusoutput(cmd)
-    service_progress()  # 使用进度条代替sleep，避免在显示上卡住。
-#    time.sleep(5)  # 需要等待5s，否则检查进程数会异常。
-    if get_ps_count('java') == 0:
-        print 'stop LFS success...'
+    if get_ps_count('java') != 0:
+        cmd = '/usr/bin/sync'  # 将内存缓冲区数据写入磁盘
+        print '开始同步缓冲区数据到磁盘...'
+        commands.getstatusoutput(cmd)
+        service_progress()
+    #    time.sleep(10)
+        cmd = '/usr/linkapp/bin/tomcat_stop.sh'
+        print '开始停止LFS应用'
+        commands.getstatusoutput(cmd)
+        service_progress()  # 使用进度条代替sleep，避免在显示上卡住。
+    #    time.sleep(5)  # 需要等待5s，否则检查进程数会异常。
+        if get_ps_count('java') == 0:
+            print 'stop LFS success...'
+        else:
+            print 'stop LFS failed,please check logfile /usr/linkapp/bin/tomcat-master/logs'
     else:
-        print 'stop LFS failed,please check logfile /usr/linkapp/bin/tomcat-master/logs'
+        print 'LFS应用未启动...'
 
 
 def lfs_restart():

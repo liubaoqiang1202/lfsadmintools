@@ -6,7 +6,7 @@ import commands
 def memcached_start():
     if get_ps_count('memcached') == 0:
         cmd = '/usr/bin/bash /etc/rc.local'
-        get_ps_count(cmd)
+        commands.getoutput(cmd)
         service_progress(10)
         if get_ps_count('memcached') != 0:
             print 'restart memcached Success!'
