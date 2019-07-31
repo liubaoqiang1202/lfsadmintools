@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import commands
+import os
 import time
 from publicCommands import get_ps_count, service_progress
 
@@ -39,8 +40,7 @@ def lfs_stop():
 def lfs_restart():
     cmd = '/usr/linkapp/bin/tomcat_restart.sh'
     print '开始重启LFS应用'
-    commands.getstatusoutput(cmd)
-    service_progress()  # 添加demo进度条
+    os.system(cmd)
     wget_status, wget_msg = commands.getstatusoutput(cmd='wget http://127.0.0.1:6800')
 
     if wget_status != 0 and get_ps_count('java') != 0:
