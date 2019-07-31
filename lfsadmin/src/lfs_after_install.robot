@@ -51,8 +51,13 @@ Library	psutil.Process
 
 8、检查数据库连接是否正常
     Connect To Database Using Custom Params    pymysql    database='data_linkapp', user='root', password='mysql2012', host='localhost', port=3306
+
+9、检查memcached是否已经启动
+    ${memcached_check}= Run ps -ef|grep memcached
+	Log ${memcached_check}
+	Should Contain  ${memcached_check} /usr/local/bin/memcached
 	
-9、检查数据库是否有慢查询日志
+10、检查数据库是否有慢查询日志
 	${slow_log}	Run	ls /data/var
 	LOG	${slow_log}
 	Should Not Contain	${slow_log}	slow.log
