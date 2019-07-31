@@ -83,10 +83,10 @@ def main():
             ('start memchched', memcached_start),
             ('stop memcached', memcached_stop),
             ('restart memcached', memcached_restart),
-            ('stop all service', stop_all)])),
+            ('stop all service', stop_all)])),  # 停止所有软件（nginx/memcached/tomcat）
         ('Normal startup all service', start_all),
-        ('Abnormal startup', lfs_start),
-        ('Stop LFS', lfs_stop),
+        # ('Abnormal startup', lfs_start),
+        ('Stop LFS', lfs_stop),  # 停止tomcat
         ('LFS check', SubCmd([
             ('before install check', before_check),
             ('after install check', after_check),

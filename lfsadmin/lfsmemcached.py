@@ -33,7 +33,7 @@ def memcached_stop():
 def memcached_restart():
     memcached_stop()
     if get_ps_count('memcached') == 0:
-        print 'stop memcached success'
+        # print 'stop memcached Success!'
         print 'starting memcached....'
         memcached_start()
     else:
