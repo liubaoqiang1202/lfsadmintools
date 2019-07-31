@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import os
 import datetime
 from lfsmemcached import *
@@ -30,6 +29,12 @@ def start_all():
     memcached_start()
     lfs_start()
     after_check()
+
+
+def stop_all():
+    lfs_stop()
+    memcached_stop()
+    nginx_stop()
 
 
 

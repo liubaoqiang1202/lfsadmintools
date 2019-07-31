@@ -3,8 +3,10 @@
 
 from sys import argv, exit
 from argparse import ArgumentParser
-from other import after_check, before_check, start_all
+from other import after_check, before_check, start_all, stop_all
 from lfstomcat import *
+from lfsnginx import *
+from lfsmemcached import *
 
 
 def quitService():
@@ -71,9 +73,17 @@ def output_and_do_action(act_list, parent=None):
 def main():
     action_list = [
         ('system maintenance', SubCmd([
-            ('start service', lfs_start),
-            ('stop service', lfs_stop),
-            ('restart service', lfs_restart)])),
+            ('start tomcat', lfs_start),
+            ('stop tomcat', lfs_stop),
+            ('restart tomcat', lfs_restart),
+            ('start nginx', nginx_start),
+            ('stop nginx', nginx_stop),
+            ('restart nginx', nginx_restart),
+            ('check nginx config', nginx_config_check),
+            ('start memchched', memcached_start),
+            ('stop memcached', memcached_stop),
+            ('restart memcached', memcached_restart),
+            ('stop all service', stop_all)])),
         ('Normal startup all service', start_all),
         ('Abnormal startup', lfs_start),
         ('Stop LFS', lfs_stop),
