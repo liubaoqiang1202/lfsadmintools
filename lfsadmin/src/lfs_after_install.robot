@@ -50,7 +50,7 @@ Library	psutil.Process
 	Should Contain	${tomcat_check}	file=/usr/linkapp/bin/tomcat-master/conf
 
 8、检查数据库连接是否正常
-    Connect To Database Using Custom Params    pymysql    database='data_linkapp', user='root', password='mysql2012', host='192.168.7.26', port=3306
+    Connect To Database Using Custom Params    pymysql    database='data_linkapp', user='root', password='mysql2012', host='localhost', port=3306
 	
 9、检查数据库是否有慢查询日志
 	${slow_log}	Run	ls /data/var
