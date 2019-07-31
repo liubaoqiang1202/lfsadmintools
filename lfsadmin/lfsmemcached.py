@@ -9,11 +9,12 @@ def memcached_start():
         commands.getoutput(cmd)
         service_progress(10)
         if get_ps_count('memcached') != 0:
-            print 'restart memcached Success!'
+            print 'start memcached Success!'
         else:
             print 'start memcached Failed'
     else:
         print 'memcached already started!'
+    return True
 
 
 def memcached_stop():
@@ -22,6 +23,11 @@ def memcached_stop():
     else:
         cmd = 'pkill memcached'
         commands.getoutput(cmd)
+        if get_ps_count('memcached') == 0:
+            print 'stop memcached Success!'
+        else:
+            print 'stop memcached failed!'
+    return True
 
 
 def memcached_restart():
@@ -32,6 +38,7 @@ def memcached_restart():
         memcached_start()
     else:
         print 'stop memcached Failed!'
+    return True
 
 
 

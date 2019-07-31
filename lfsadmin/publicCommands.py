@@ -19,7 +19,7 @@ def get_ps_count(service_name):
     return ps_count
 
 
-def service_progress(maxrange=100):
+def service_progress(maxrange=100):  # 进度条
     for i in tqdm.tqdm(range(0, maxrange)):
         time.sleep(0.1)
 

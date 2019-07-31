@@ -25,9 +25,18 @@ def after_check():  # 应用安装后检查 日志存放路径/home
 
 
 def start_all():
-    nginx_start()
-    memcached_start()
-    lfs_start()
+    if get_ps_count('nginx') == 0:
+        nginx_start()
+    else:
+        nginx_restart()
+    if get_ps_count('memcached') == 0:
+        memcached_start()
+    else:
+        memcached_restart()
+    if get_ps_count('java') == 0:
+        lfs_start()
+    else:
+        lfs_restart()
     after_check()
 
 
