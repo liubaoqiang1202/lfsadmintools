@@ -4,7 +4,7 @@
 from sys import argv, exit
 from argparse import ArgumentParser
 from other import after_check, before_check
-from lfsService import *
+from lfstomcat import *
 
 
 def quitService():
