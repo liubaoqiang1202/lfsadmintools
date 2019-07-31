@@ -2,6 +2,9 @@
 
 import os
 import datetime
+from lfsmemcached import *
+from lfstomcat import *
+from lfsnginx import *
 
 
 def setting():
@@ -20,5 +23,14 @@ def after_check():  # 应用安装后检查 日志存放路径/home
     cmd = 'source /LFS_check/venv/bin/activate;robot -d "/home/afterCheck' + now + '" src/lfs_after_install.robot'
     os.system(cmd)
     return True
+
+
+def start_all():
+    nginx_start()
+    memcached_start()
+    lfs_start()
+    after_check()
+
+
 
 

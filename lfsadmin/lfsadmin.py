@@ -3,7 +3,7 @@
 
 from sys import argv, exit
 from argparse import ArgumentParser
-from other import after_check, before_check
+from other import after_check, before_check, start_all
 from lfstomcat import *
 
 
@@ -74,7 +74,7 @@ def main():
             ('start service', lfs_start),
             ('stop service', lfs_stop),
             ('restart service', lfs_restart)])),
-        ('Normal startup', lfs_start),
+        ('Normal startup all service', start_all),
         ('Abnormal startup', lfs_start),
         ('Stop LFS', lfs_stop),
         ('LFS check', SubCmd([

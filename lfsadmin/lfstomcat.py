@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 import commands
 import os
-import time
 from publicCommands import get_ps_count, service_progress
+# import time
 
 
 def lfs_start():
@@ -50,5 +50,4 @@ def lfs_restart():
     else:
         print 'start LFS service failed...'
         print '请查看tomcat日志 /usr/linkapp/bin/tomcat-master/logs/'
-
 
