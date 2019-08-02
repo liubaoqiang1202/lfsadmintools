@@ -24,3 +24,15 @@ def service_progress(maxrange=100):  # 进度条
         time.sleep(0.1)
 
 
+def check_web_service(index_file):
+    with open(index_file, 'r') as f:
+        count = 0
+        find_str = '缓存服务异常'
+        for line in f.readlines():
+            a = line.find(find_str)
+            if a != -1:
+                count = a
+        print count
+
+
+
