@@ -46,5 +46,6 @@ def stop_all():
     nginx_stop()
 
 
-
-
+def clearScreen():
+    cmd = 'clear'
+    commands.getoutput(cmd)

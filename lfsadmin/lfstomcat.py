@@ -45,9 +45,9 @@ def lfs_restart():
     print '开始重启LFS应用'
     os.system(cmd)
     wget_status, wget_msg = commands.getstatusoutput(cmd='wget http://127.0.0.1:6800')
-    if check_web_service('./index.html') != 0 and wget_status != 0 and get_ps_count('java') != 0:
+    if wget_status != 0 and get_ps_count('java') != 0:
         print 'tomcat已启动，页面功能异常，请检查'
-    elif check_web_service('./index.html') == 0 and wget_status == 0 and get_ps_count('java') > 0:
+    elif wget_status == 0 and get_ps_count('java') > 0:
         print 'start LFS success'
     else:
         print 'start LFS service failed...'

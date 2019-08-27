@@ -32,7 +32,7 @@ def check_web_service(index_file):
             a = line.find(find_str)
             if a != -1:
                 count = a
-        print count
+        return count
 
 
 

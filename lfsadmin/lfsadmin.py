@@ -3,7 +3,7 @@
 
 from sys import argv, exit
 from argparse import ArgumentParser
-from other import after_check, before_check, start_all, stop_all
+from other import after_check, before_check, start_all, stop_all, clearScreen
 from lfstomcat import *
 from lfsnginx import *
 from lfsmemcached import *
@@ -71,19 +71,20 @@ def output_and_do_action(act_list, parent=None):
 
 
 def main():
+
     action_list = [
-        ('system maintenance', SubCmd([
-            ('start tomcat', lfs_start),
-            ('stop tomcat', lfs_stop),
-            ('restart tomcat', lfs_restart),
-            ('start nginx', nginx_start),
-            ('stop nginx', nginx_stop),
-            ('restart nginx', nginx_restart),
-            ('check nginx config', nginx_config_check),
-            ('start memchched', memcached_start),
-            ('stop memcached', memcached_stop),
-            ('restart memcached', memcached_restart),
-            ('stop all service', stop_all)])),  # 停止所有软件（nginx/memcached/tomcat）
+        ('system Maintenance', SubCmd([
+            ('Start Tomcat', lfs_start),
+            ('Stop Tomcat', lfs_stop),
+            ('Restart Tomcat', lfs_restart),
+            ('Start Nginx', nginx_start),
+            ('Stop Nginx', nginx_stop),
+            ('Restart Nginx', nginx_restart),
+            ('Check Nginx Config', nginx_config_check),
+            ('Start Memchched', memcached_start),
+            ('Stop Memcached', memcached_stop),
+            ('Restart Memcached', memcached_restart),
+            ('Stop All Service', stop_all)])),  # 停止所有软件（nginx/memcached/tomcat）
         ('Normal startup all service', start_all),
         # ('Abnormal startup', lfs_start),
         ('Stop LFS', lfs_stop),  # 停止tomcat
@@ -95,6 +96,7 @@ def main():
         ('Quit', quitService)
     ]
 
+    clearScreen()
     output_and_do_action(action_list)
 
 
