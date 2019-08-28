@@ -97,6 +97,7 @@ def main():
     ]
 
     clearScreen()
+    after_check()
     output_and_do_action(action_list)
 
 

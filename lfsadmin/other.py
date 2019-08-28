@@ -48,4 +48,4 @@ def stop_all():
 
 def clearScreen():
     cmd = 'clear'
-    commands.getoutput(cmd)
+    os.system(cmd)
