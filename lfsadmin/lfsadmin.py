@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import time
 from sys import argv, exit
 from argparse import ArgumentParser
 from other import after_check, before_check, start_all, stop_all, clearScreen
@@ -97,6 +98,8 @@ def main():
     ]
 
     clearScreen()
+    print "Start check serivces..."
+    time.sleep(0.5)
     after_check()
     output_and_do_action(action_list)
 
