@@ -4,7 +4,7 @@
 import time
 from sys import argv, exit
 from argparse import ArgumentParser
-from other import after_check, before_check, start_all, stop_all, clearScreen
+from other import after_check, before_check, start_all, stop_all, clearScreen, get_ip
 from lfstomcat import *
 from lfsnginx import *
 from lfsmemcached import *
@@ -98,6 +98,7 @@ def main():
     ]
 
     clearScreen()
+    get_ip()
     print "Start check serivces..."
     time.sleep(0.5)
     after_check()
@@ -106,3 +107,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+

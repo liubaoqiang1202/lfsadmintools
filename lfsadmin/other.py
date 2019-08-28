@@ -49,3 +49,8 @@ def stop_all():
 def clearScreen():
     cmd = 'clear'
     os.system(cmd)
+
+def get_ip():
+    cmd = "ip addr |grep "inet " |grep -v "127.0.0.1" |awk -F " " {'print $2'} |awk -F '/' {'print $1'"
+    out = os.popen(cmd).read()
+    print out
