@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /opt/lfsadmintools-master/lfsadmin
+python /opt/lfsadmintools-master/lfsadmin/lfsadmin.py

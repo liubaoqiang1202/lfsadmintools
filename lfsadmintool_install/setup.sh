@@ -1,9 +1,15 @@
 #!/bin/bash
 #安装依赖包,否则安装psutil等失败
 yum install -y gcc python-devel
-#安装python
+#lfsadmintools执行脚本
+cp /opt/lfsadmintools-master/lfsadmintool_install/lfsadmintools /usr/sbin/
+chmod 777 /usr/sbin/lfsadmintools
+#创建日志存放目录
 mkdir -p /home/afterCheck
 mkdir -p /home/beforeCheck
+
+chmod 755 -R /opt/lfsadmintools-master
+#安装python
 cd ./python
 tar -zxvf Python-2.7.5.tgz
 cd Python-2.7.5
@@ -31,13 +37,14 @@ cd ../..
 pip install packages/virtualenv-16.6.0-py2.py3-none-any.whl
 virtualenv --no-site-packages venv
 
-#source venv/bin/activate
+source venv/bin/activate
 
-echo "C_INCLUDE_PATH=/usr/local/python-2.7.5/include/python2.7" >> /etc/profile
-echo "LIBRARY_PATH=/usr/local/python-2.7.5/lib" >> /etc/profile
+C_INCLUDE_PATH=/usr/local/python-2.7.5/include/python2.7
+LIBRARY_PATH=/usr/local/python-2.7.5/lib
 #CPLUS_INCLUDE_PATH=/usr/local/include
 
-source /etc/profile
 #export CPLUS_INCLUDE_PATH
+export C_INCLUDE_PATH
+export LIBRARY_PATH
 
 pip install --no-index --find-links=packages -r /opt/lfsadmintools-master/lfsadmintool_install/requirements_linux.txt
