@@ -63,7 +63,7 @@ Library	psutil.Process
 	LOG	/data/var目录下没有慢查询日志
 
 #10、检查数据库主主同步是否正常
-#	${mysqls}	Run	mysql -uroot -pmysql2012 < /LFS_check/src/test.sql
+#	${mysqls}	Run	mysql -uroot -pmysql2012 < /opt/lfsadmintools-master/lfsadmin/src/test.sql
 #	LOG	${mysqls}
 #	Should Contain	${mysqls}	Slave_IO_Running: Yes
 #	Should Contain  ${mysqls}	Slave_SQL_Running: Yes

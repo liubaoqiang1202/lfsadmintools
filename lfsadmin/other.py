@@ -12,7 +12,7 @@ def setting():
 
 def before_check():  # 应用安装前检查 日志存放路径/home
     now = str(datetime.datetime.now())
-    cmd = 'source /opt/lfs-admin-master/lfsadmintools_install/venv/bin/activate;' \
+    cmd = 'source /opt/lfsadmintools-master/lfsadmintool_install/venv/bin/activate;' \
           'robot -d "/home/beforeCheck' + now + '" src/lfs_before_install.robot'
     os.system(cmd)
     return True
@@ -20,7 +20,7 @@ def before_check():  # 应用安装前检查 日志存放路径/home
 
 def after_check():  # 应用安装后检查 日志存放路径/home
     now = str(datetime.datetime.now())
-    cmd = 'source /opt/lfs-admin-master/lfsadmintools_install/venv/bin/activate;' \
+    cmd = 'source /opt/lfsadmintools-master/lfsadmintool_install/venv/bin/activate;' \
           'robot -d "/home/afterCheck' + now + '"  src/lfs_after_install.robot'
     os.system(cmd)
     return True

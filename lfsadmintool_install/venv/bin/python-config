@@ -1,4 +1,4 @@
-#!/opt/lfs-admin-master/lfsadmintools_install/venv/bin/python
+#!/opt/lfsadmintools-master/lfsadmintool_install/venv/bin/python
 
 import sys
 import getopt

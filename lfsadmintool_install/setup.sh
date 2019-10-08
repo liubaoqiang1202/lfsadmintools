@@ -1,6 +1,6 @@
 #!/bin/bash
 #安装依赖包,否则安装psutil等失败
-yum install gcc python-devel
+yum install -y gcc python-devel
 #安装python
 cd ./python
 tar -zxvf Python-2.7.5.tgz

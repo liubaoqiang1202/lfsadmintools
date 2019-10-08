@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/opt/lfs-admin-master/lfsadmintools_install/venv"
+VIRTUAL_ENV="/opt/lfsadmintools-master/lfsadmintool_install/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
