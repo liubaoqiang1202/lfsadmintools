@@ -2,6 +2,8 @@
 #安装依赖包,否则安装psutil等失败
 yum install -y gcc python-devel
 #安装python
+mkdir -p /home/afterCheck
+mkdir -p /home/beforeCheck
 cd ./python
 tar -zxvf Python-2.7.5.tgz
 cd Python-2.7.5
@@ -38,4 +40,4 @@ echo "LIBRARY_PATH=/usr/local/python-2.7.5/lib" >> /etc/profile
 source /etc/profile
 #export CPLUS_INCLUDE_PATH
 
-pip install --no-index --find-links=packages -r requirements_linux.txt
+pip install --no-index --find-links=packages -r /opt/lfsadmintools-master/lfsadmintool_install/requirements_linux.txt
