@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/lfsadmintools.iml" filepath="$PROJECT_DIR$/.idea/lfsadmintools.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/lfs-admin-master.iml" filepath="$PROJECT_DIR$/.idea/lfs-admin-master.iml" />
+>>>>>>> dab6d39a954a3f635936e8f00d799dad3e421cf4
     </modules>
   </component>
 </project>
