@@ -48,3 +48,7 @@ export C_INCLUDE_PATH
 export LIBRARY_PATH
 
 pip install --no-index --find-links=packages -r /opt/lfsadmintools-master/lfsadmintool_install/requirements_linux.txt
+
+pip install /opt/lfsadmintools-master/lfsadmintool_install/packages/tqdm-4.36.1-py2.py3-none-any.whl
+
+pip install /opt/lfsadmintools-master/lfsadmintool_install/packages/psutil-5.5.1-cp27-cp27m-linux_x86_64.whl
