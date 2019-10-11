@@ -32,6 +32,15 @@ cd pip-19.1.1
 python setup.py install
 #ln -s /usr/local/python-2.7.5/bin/pip /usr/bin/pip
 
+pip install /opt/lfsadmintools-master/lfsadmintool_install/packages/tqdm-4.36.1-py2.py3-none-any.whl
+
+cd /opt/lfsadmintools-master/lfsadmintool_install/packages/
+
+tar -zxvf psutil-5.5.1.tar.gz
+cd -
+cd /opt/lfsadmintools-master/lfsadmintool_install/packages/psutil-5.5.1/
+/usr/bin/python setup.py install
+cd -
 #安装虚拟空间
 cd ../..
 pip install packages/virtualenv-16.6.0-py2.py3-none-any.whl
